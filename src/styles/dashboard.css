@@ -1,0 +1,194 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---- Stat cards ---- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stat-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.stat-label {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 4px 0;
+}
+
+.stat-hint {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  margin-top: 8px;
+}
+
+.progress-track {
+  height: 8px;
+  background: var(--surface-2);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+/* ---- Chart + today's plan ---- */
+.grid-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.chart-box {
+  width: 100%;
+  height: 280px;
+}
+
+.plan-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.plan-sub {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 4px 0 14px;
+}
+
+.exercise-list,
+.workout-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.exercise-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.primary-btn {
+  width: 100%;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #04130a;
+  font-weight: 700;
+}
+
+.primary-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ---- Recent workouts ---- */
+.workout-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.workout-row:last-child,
+.exercise-list li:last-child {
+  border-bottom: 0;
+}
+
+.workout-name {
+  font-weight: 600;
+}
+
+.workout-meta {
+  display: flex;
+  gap: 16px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.workout-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.footnote {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ---- Placeholder pages ---- */
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--accent);
+}
+
+.placeholder h2 {
+  color: var(--text);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1100px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .stats-grid {
+    gap: 12px;
+  }
+  .stat-value {
+    font-size: 1.35rem;
+  }
+  .card {
+    padding: 16px;
+  }
+  .chart-box {
+    height: 220px;
+  }
+  .workout-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,38 @@
+/* Global theme: change colours here and the whole app updates */
+:root {
+  --bg: #0a0f0c;
+  --surface: #121a15;
+  --surface-2: #19241d;
+  --border: #243229;
+  --text: #e8f0ea;
+  --text-muted: #8da095;
+  --accent: #22c55e;
+  --accent-soft: rgba(34, 197, 94, 0.14);
+  --warn: #f5b942;
+  --radius: 16px;
+  --sidebar-width: 240px;
+  --header-height: 68px;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}

@@ -1,0 +1,71 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  min-height: var(--header-height);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 28px;
+  background: rgba(10, 15, 12, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.welcome {
+  flex: 1;
+  min-width: 0;
+}
+
+.welcome h1 {
+  font-size: 1.25rem;
+}
+
+.welcome p {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* Hidden on desktop/tablet: the sidebar already shows the logo */
+.menu-btn,
+.header-logo {
+  display: none;
+}
+
+.menu-btn {
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 10px 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .menu-btn {
+    display: grid;
+  }
+  .header-logo {
+    display: block;
+    flex: 1;
+  }
+  /* Welcome message drops to its own row, badge stays beside the logo */
+  .welcome {
+    order: 3;
+    flex-basis: 100%;
+  }
+  .welcome h1 {
+    font-size: 1.05rem;
+  }
+}

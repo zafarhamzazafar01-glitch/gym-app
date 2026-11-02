@@ -1,0 +1,111 @@
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: var(--sidebar-width);
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 20px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  z-index: 30;
+  transition: transform 0.25s ease;
+}
+
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+}
+
+.close-btn,
+.overlay {
+  display: none;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--text-muted);
+  text-align: left;
+  transition: background 0.15s, color 0.15s;
+}
+
+.nav-item:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.nav-item.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.nav-item:focus-visible,
+.menu-btn:focus-visible {
+  outline: 2px solid var(--accent);
+}
+
+/* Tablet: icons only */
+@media (max-width: 1024px) and (min-width: 641px) {
+  .sidebar {
+    align-items: center;
+    padding: 20px 10px;
+  }
+  .sidebar .logo-text,
+  .nav-label {
+    display: none;
+  }
+  .sidebar-top {
+    padding: 0;
+  }
+  .nav-item {
+    justify-content: center;
+  }
+}
+
+/* Mobile: off-screen drawer */
+@media (max-width: 640px) {
+  .sidebar {
+    width: 260px;
+    transform: translateX(-100%);
+    box-shadow: 8px 0 30px rgba(0, 0, 0, 0.5);
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  .close-btn {
+    display: grid;
+    place-items: center;
+    background: transparent;
+    border: 0;
+    color: var(--text-muted);
+  }
+  .overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+    z-index: 20;
+  }
+  .overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

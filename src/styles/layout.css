@@ -1,0 +1,100 @@
+/* Overall page layout: sidebar on the left, main area on the right */
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  min-width: 0; /* lets charts shrink instead of overflowing */
+  margin-left: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: 24px 28px 40px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.card-head h2 {
+  font-size: 1.05rem;
+}
+
+.muted {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.sample-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--warn);
+  background: rgba(245, 185, 66, 0.12);
+  border: 1px solid rgba(245, 185, 66, 0.35);
+  padding: 3px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-mark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #04130a;
+}
+
+.logo-text {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.logo-text span {
+  color: var(--accent);
+}
+
+/* Tablet: sidebar shrinks to icons only */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 76px;
+  }
+  .content {
+    padding: 20px;
+  }
+}
+
+/* Mobile: sidebar becomes a slide-in drawer */
+@media (max-width: 640px) {
+  .main {
+    margin-left: 0;
+  }
+  .content {
+    padding: 16px;
+  }
+}
