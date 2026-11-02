@@ -3,6 +3,7 @@ import Sidebar from './components/Sidebar'
 import { NAV_ITEMS } from './data/navItems'
 import Header from './components/Header'
 import Dashboard from './pages/Dashboard'
+import MyWorkouts from './pages/MyWorkouts'
 import Placeholder from './pages/Placeholder'
 import './styles/layout.css'
 
@@ -31,6 +32,8 @@ export default function App() {
         <main className="content">
           {activePage === 'dashboard' ? (
             <Dashboard />
+          ) : activePage === 'workouts' ? (
+            <MyWorkouts />
           ) : (
             <Placeholder title={current.label} icon={current.icon} />
           )}
