@@ -1,0 +1,235 @@
+/* Welcome / start page (Figma "Repform welcome") */
+.welcome {
+  --w-bg: #080a09;
+  --w-lime: #d1ff48;
+  --w-text: #f6f7f2;
+  --w-muted: #929891;
+  position: relative;
+  min-height: 100vh;
+  background: var(--w-bg);
+  color: var(--w-text);
+  overflow: hidden;
+}
+
+.welcome-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* anchor near the top so the athlete's head stays in frame */
+  object-position: center 12%;
+  pointer-events: none;
+}
+
+.welcome-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 10, 9, 0.15) 0%,
+    rgba(8, 10, 9, 0) 30%,
+    rgba(8, 10, 9, 0.125) 63%,
+    #080a09 100%
+  );
+}
+
+.welcome-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 72px;
+  min-height: 100vh;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 72px;
+}
+
+.welcome-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  flex: 0 0 560px;
+  max-width: 100%;
+}
+
+.welcome-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 18px 28px 0;
+}
+
+.welcome-wordmark {
+  font-family: 'Barlow Condensed', 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 27px;
+  letter-spacing: 1.5px;
+}
+
+.welcome-wordmark span {
+  color: var(--w-lime);
+}
+
+.welcome-quote {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.welcome-quote-rule {
+  width: 2px;
+  height: 36px;
+  background: var(--w-lime);
+}
+
+.welcome-quote p {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.welcome-text {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.welcome-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--w-lime);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.1px;
+}
+
+.welcome-eyebrow-dash {
+  width: 18px;
+  height: 3px;
+  background: var(--w-lime);
+}
+
+.welcome-headline {
+  margin: 0;
+  font-family: 'Barlow Condensed', 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 66px;
+  line-height: 0.94;
+  letter-spacing: -0.6px;
+}
+
+.welcome-headline span {
+  color: var(--w-lime);
+}
+
+.welcome-description {
+  color: var(--w-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.welcome-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 21px;
+}
+
+.welcome-start {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 58px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--w-lime);
+  color: var(--w-bg);
+  font-size: 15px;
+  font-weight: 700;
+  transition: filter 0.15s, transform 0.15s;
+}
+
+.welcome-start:hover {
+  filter: brightness(1.06);
+}
+
+.welcome-start:active {
+  transform: scale(0.99);
+}
+
+.welcome-start:focus-visible,
+.welcome-signin button:focus-visible {
+  outline: 2px solid var(--w-text);
+  outline-offset: 3px;
+}
+
+.welcome-signin {
+  color: var(--w-muted);
+  font-size: 13px;
+}
+
+.welcome-signin button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--w-text);
+  font-weight: 600;
+}
+
+.welcome-visual {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  align-self: stretch;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  background: #0d0f0d;
+  overflow: hidden;
+}
+
+.welcome-visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 8%;
+}
+
+.welcome-visual-overlay {
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(180deg, rgba(8, 10, 9, 0), #080a09);
+}
+
+@media (max-width: 1000px) {
+  .welcome-content {
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .welcome-copy {
+    flex: none;
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .welcome-brand {
+    padding-left: 0;
+  }
+
+  .welcome-visual {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-headline {
+    font-size: 52px;
+  }
+}
