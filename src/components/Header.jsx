@@ -16,7 +16,7 @@ export default function Header({ onMenuClick }) {
         <Logo />
       </div>
 
-      <div className="welcome">
+      <div className="header-welcome">
         <h1>Welcome back, {SAMPLE_USER.name} 👋</h1>
         <p>Let&apos;s make today count.</p>
       </div>

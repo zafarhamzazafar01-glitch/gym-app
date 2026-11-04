@@ -5,7 +5,7 @@
 // ============================================================
 
 export const SAMPLE_USER = {
-  name: 'Alex', // placeholder name
+  name: 'Hamza',
   weeklyWorkoutGoal: 4,
   unit: 'kg',
 }
@@ -32,15 +32,22 @@ export const SAMPLE_RECENT_WORKOUTS = [
 
 export const SAMPLE_TOTAL_WORKOUTS = 47
 
-export const SAMPLE_TODAYS_WORKOUT = {
-  name: 'Pull Day',
-  focus: 'Back & Biceps',
-  estimatedMinutes: 55,
-  exercises: [
-    { name: 'Deadlift', sets: 4, reps: '5' },
-    { name: 'Pull-ups', sets: 3, reps: '8-10' },
-    { name: 'Barbell Row', sets: 4, reps: '8' },
-    { name: 'Face Pulls', sets: 3, reps: '15' },
-    { name: 'Dumbbell Curls', sets: 3, reps: '12' },
-  ],
-}
+// Consecutive days with a workout
+export const SAMPLE_STREAK_DAYS = 5
+
+// Workouts logged per day, this week
+export const SAMPLE_WEEKLY_ACTIVITY = [
+  { day: 'Mon', workouts: 1 },
+  { day: 'Tue', workouts: 0 },
+  { day: 'Wed', workouts: 1 },
+  { day: 'Thu', workouts: 1 },
+  { day: 'Fri', workouts: 0 },
+  { day: 'Sat', workouts: 1 },
+  { day: 'Sun', workouts: 0 },
+]
+
+export const SAMPLE_PERSONAL_RECORDS = [
+  { lift: 'Bench Press', weight: 90 },
+  { lift: 'Squat', weight: 120 },
+  { lift: 'Deadlift', weight: 150 },
+]

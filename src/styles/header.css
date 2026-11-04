@@ -12,16 +12,16 @@
   border-bottom: 1px solid var(--border);
 }
 
-.welcome {
+.header-welcome {
   flex: 1;
   min-width: 0;
 }
 
-.welcome h1 {
+.header-welcome h1 {
   font-size: 1.25rem;
 }
 
-.welcome p {
+.header-welcome p {
   color: var(--text-muted);
   font-size: 0.875rem;
 }
@@ -61,11 +61,11 @@
     flex: 1;
   }
   /* Welcome message drops to its own row, badge stays beside the logo */
-  .welcome {
+  .header-welcome {
     order: 3;
     flex-basis: 100%;
   }
-  .welcome h1 {
+  .header-welcome h1 {
     font-size: 1.05rem;
   }
 }

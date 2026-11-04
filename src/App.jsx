@@ -5,6 +5,8 @@ import Header from './components/Header'
 import Welcome from './pages/Welcome'
 import Dashboard from './pages/Dashboard'
 import MyWorkouts from './pages/MyWorkouts'
+import WorkoutPlanner from './pages/WorkoutPlanner'
+import WeightTracker from './pages/WeightTracker'
 import Placeholder from './pages/Placeholder'
 import './styles/layout.css'
 
@@ -51,9 +53,13 @@ export default function App() {
         <Header onMenuClick={() => setMenuOpen(true)} />
         <main className="content">
           {activePage === 'dashboard' ? (
-            <Dashboard />
+            <Dashboard onNavigate={handleNavigate} />
           ) : activePage === 'workouts' ? (
             <MyWorkouts />
+          ) : activePage === 'planner' ? (
+            <WorkoutPlanner />
+          ) : activePage === 'weight' ? (
+            <WeightTracker />
           ) : (
             <Placeholder title={current.label} icon={current.icon} />
           )}

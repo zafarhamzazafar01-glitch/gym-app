@@ -1,6 +1,6 @@
 import {
-  AreaChart,
-  Area,
+  LineChart,
+  Line,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -20,13 +20,7 @@ export default function WeightChart() {
       </div>
       <div className="chart-box">
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart data={SAMPLE_WEIGHT_HISTORY} margin={{ top: 8, right: 8, left: -12, bottom: 0 }}>
-            <defs>
-              <linearGradient id="weightFill" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#22c55e" stopOpacity={0.4} />
-                <stop offset="100%" stopColor="#22c55e" stopOpacity={0} />
-              </linearGradient>
-            </defs>
+          <LineChart data={SAMPLE_WEIGHT_HISTORY} margin={{ top: 8, right: 8, left: -12, bottom: 0 }}>
             <CartesianGrid stroke="#243229" strokeDasharray="3 3" vertical={false} />
             <XAxis dataKey="date" stroke="#8da095" tickLine={false} axisLine={false} fontSize={12} />
             <YAxis
@@ -46,16 +40,15 @@ export default function WeightChart() {
               }}
               formatter={(value) => [`${value} ${unit}`, 'Weight']}
             />
-            <Area
+            <Line
               type="monotone"
               dataKey="weight"
               stroke="#22c55e"
               strokeWidth={3}
-              fill="url(#weightFill)"
               dot={{ r: 3, fill: '#22c55e' }}
               activeDot={{ r: 6 }}
             />
-          </AreaChart>
+          </LineChart>
         </ResponsiveContainer>
       </div>
     </section>

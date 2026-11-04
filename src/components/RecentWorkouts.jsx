@@ -1,4 +1,3 @@
-import { Clock, ListChecks } from 'lucide-react'
 import SampleBadge from './SampleBadge'
 import { SAMPLE_RECENT_WORKOUTS } from '../data/sampleData'
 
@@ -9,20 +8,28 @@ export default function RecentWorkouts() {
         <h2>Recent Workouts</h2>
         <SampleBadge />
       </div>
-      <ul className="workout-list">
-        {SAMPLE_RECENT_WORKOUTS.map((w) => (
-          <li key={w.id} className="workout-row">
-            <div>
-              <p className="workout-name">{w.name}</p>
-              <p className="muted">{w.date}</p>
-            </div>
-            <div className="workout-meta">
-              <span><Clock size={14} /> {w.duration} min</span>
-              <span><ListChecks size={14} /> {w.exercises} exercises</span>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <div className="table-wrap">
+        <table className="workout-table">
+          <thead>
+            <tr>
+              <th>Workout</th>
+              <th>Date</th>
+              <th>Duration</th>
+              <th>Exercises</th>
+            </tr>
+          </thead>
+          <tbody>
+            {SAMPLE_RECENT_WORKOUTS.map((w) => (
+              <tr key={w.id}>
+                <td className="workout-name">{w.name}</td>
+                <td>{w.date}</td>
+                <td>{w.duration} min</td>
+                <td>{w.exercises}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </section>
   )
 }
