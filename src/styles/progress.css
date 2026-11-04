@@ -1,0 +1,75 @@
+.progress-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 980px;
+}
+
+/* ---- Strength & records ---- */
+.record-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.record-item {
+  background: var(--surface-2);
+  border-radius: 12px;
+  padding: 14px;
+  color: var(--accent);
+  min-width: 0;
+}
+
+.record-name {
+  overflow-wrap: anywhere;
+}
+
+.record-meta {
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+
+.record-gain {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 6px;
+  color: var(--text-muted);
+}
+
+.record-gain.up {
+  color: var(--accent);
+}
+
+.show-more {
+  margin-top: 14px;
+}
+
+/* ---- Recent progress cards ---- */
+.recent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.recent-card {
+  min-width: 0;
+}
+
+.recent-value {
+  font-size: 1.25rem;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+  .record-grid,
+  .recent-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .record-grid,
+  .recent-grid {
+    grid-template-columns: 1fr;
+  }
+}

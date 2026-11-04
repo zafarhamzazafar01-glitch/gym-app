@@ -7,6 +7,8 @@ import Dashboard from './pages/Dashboard'
 import MyWorkouts from './pages/MyWorkouts'
 import WorkoutPlanner from './pages/WorkoutPlanner'
 import WeightTracker from './pages/WeightTracker'
+import MyProgress from './pages/MyProgress'
+import MyGoals from './pages/MyGoals'
 import Placeholder from './pages/Placeholder'
 import './styles/layout.css'
 
@@ -60,6 +62,10 @@ export default function App() {
             <WorkoutPlanner />
           ) : activePage === 'weight' ? (
             <WeightTracker />
+          ) : activePage === 'progress' ? (
+            <MyProgress />
+          ) : activePage === 'goals' ? (
+            <MyGoals />
           ) : (
             <Placeholder title={current.label} icon={current.icon} />
           )}

@@ -1,0 +1,101 @@
+.goals-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 880px;
+}
+
+/* Type, (exercise), target and button on one row */
+.goal-form-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: end;
+}
+
+.goal-form-grid .field {
+  flex: 1 1 180px;
+}
+
+.goal-submit {
+  height: 40px;
+}
+
+.field select {
+  font: inherit;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 9px 12px;
+  width: 100%;
+}
+
+.field select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.field select:disabled {
+  opacity: 0.6;
+}
+
+/* ---- Goal cards ---- */
+.goal-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.goal-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.goal-icon {
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.goal-card-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.goal-card-title h3 {
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.goal-card .progress-track {
+  margin-top: 0;
+}
+
+.goal-card-foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.85rem;
+}
+
+.goal-card.is-achieved .progress-fill {
+  background: var(--accent);
+  opacity: 0.6;
+}
+
+.goal-reached {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .goal-card-head {
+    flex-wrap: wrap;
+  }
+
+  .goal-card-title {
+    flex-basis: calc(100% - 60px);
+  }
+}
